@@ -1,11 +1,15 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:quiz_app/data/questions.dart';
-import 'package:quiz_app/data/questions_summary.dart';
+import 'package:quiz_app/data/summary/questions_summary.dart';
+import 'package:quiz_app/pages/start_screen.dart';
+import 'package:quiz_app/pages/quiz.dart';
 
 class ResultScreen extends StatelessWidget {
-  const ResultScreen(this.chosenAnswers, {super.key});
+  const ResultScreen(this.chosenAnswers, this.onRestart, {super.key});
 
   final List<String> chosenAnswers;
+  final void Function() onRestart;
 
   List<Map<String, Object>> get summaryData {
     final List<Map<String, Object>> summary = [];
@@ -42,7 +46,12 @@ class ResultScreen extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Text(
-              'ตอบถูกจำนวน $numberCorrectQuestions ใน $numberTotalQuestions ข้อ!',
+              'คุณตอบถูก $numberCorrectQuestions ใน $numberTotalQuestions ข้อ!',
+              style: GoogleFonts.laila(
+                color: Colors.black87,
+                fontSize: 20,
+                fontWeight: FontWeight.bold,
+              ),
             ),
             const SizedBox(
               height: 30,
@@ -51,9 +60,13 @@ class ResultScreen extends StatelessWidget {
             const SizedBox(
               height: 30,
             ),
-            ElevatedButton(
-              onPressed: () {},
-              child: const Text('เริ่มต้นใหม่'),
+            TextButton.icon(
+              onPressed: onRestart,
+              style: TextButton.styleFrom(
+                foregroundColor: Colors.black,
+              ),
+              icon: const Icon(Icons.refresh),
+              label: const Text('เริ่มต้นใหม่'),
             ),
           ],
         ),
