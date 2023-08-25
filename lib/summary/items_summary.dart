@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:quiz_app/data/summary/index_identifier.dart';
+import 'index_identifier.dart';
+
 
 class ItemsSummary extends StatelessWidget {
   const ItemsSummary(this.itemData, {super.key});
