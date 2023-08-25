@@ -9,7 +9,8 @@ A basic Toeic Vocabulary quiz app.
 
   **Question Page**
 
-![ภาพ](https://github.com/joy-chaimontree/ToeicQuizApp/assets/127076492/1a240b8b-d374-4404-8e0d-a73ac71962fc)
+![ภาพ](https://github.com/joy-chaimontree/ToeicQuizApp/assets/127076492/46202ba9-2cdc-4132-8d14-84c197bfb286)
+
 
 
   **Last Page**
